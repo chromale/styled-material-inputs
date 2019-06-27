@@ -19,7 +19,6 @@ storiesOf("Spinners", module)
         name="selectSometing"
         value="two"
         label="Two"
-        checked
         onChange={ev => console.log("value", ev.target.value)}
       />
     </div>

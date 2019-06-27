@@ -8,7 +8,8 @@ const TextField = ({
   onChange,
   color,
   error,
-  fullWidth
+  fullWidth,
+  type
 }) => (
   <StyledTextField
     color={color || '#2196f3'}
@@ -17,6 +18,7 @@ const TextField = ({
   >
     <input
       placeholder=' '
+      type={type || 'text'}
       value={value}
       name={name}
       value={value}

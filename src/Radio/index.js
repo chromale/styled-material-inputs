@@ -13,8 +13,8 @@ const Radio = ({ onChange, color, name, value, checked, label }) => (
     name={name}
     onChange={event => onChange(event)}
   >
-    <input type='radio' name={name} value={value} />
-    <span checked>{label}</span>
+    <input type='radio' name={name} value={value} checked={checked} />
+    <span>{label}</span>
   </StyledRadio>
 )
 
