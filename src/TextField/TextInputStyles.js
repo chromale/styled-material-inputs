@@ -15,6 +15,7 @@ const StyledTextField = styled.label`
   font-size: 14px;
   line-height: 1.5;
   overflow: hidden;
+  width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
 
   /* Input, Textarea */
   & > input,
