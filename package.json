@@ -1,0 +1,80 @@
+{
+  "name": "styled-material-inputs",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "babel src -d dist",
+    "lint": "eslint '**/*.js'",
+    "format": "prettier-standard 'src/**/*.js'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:update": "jest --updateSnapshot",
+    "test:coverage": "jest --coverage",
+    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test:staged": "jest --findRelatedTests",
+    "storybook": "start-storybook -p 9001 -c storybook",
+    "storybook:build": "build-storybook -c storybook",
+    "predeploy": "npm run storybook:build",
+    "deploy": "gh-pages -d storybook-static",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "material-ui",
+    "forms",
+    "styled-components"
+  ],
+  "author": "Ales Chromec",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-options": "^5.0.11",
+    "@storybook/react": "^5.0.11",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.5",
+    "coveralls": "^3.0.2",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^22.1.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0",
+    "gh-pages": "^2.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^2.2.0",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.1.5",
+    "prettier-standard": "^9.1.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.7.0",
+    "rimraf": "^2.6.3",
+    "webpack-cli": "^3.3.1"
+  },
+  "peerDependencies": {
+    "react": ">=16.2"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.css$": "<rootDir>/mocks/styles.js"
+    }
+  },
+  "dependencies": {
+    "styled-components": "^4.2.0"
+  }
+}
