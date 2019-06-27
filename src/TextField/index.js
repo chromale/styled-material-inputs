@@ -1,8 +1,8 @@
 import React from 'react'
 import StyledTextField from './TextInputStyles'
 
-const TextField = ({ label, value, name, onChange, color }) => (
-  <StyledTextField color={color || '#2196f3'}>
+const TextField = ({ label, value, name, onChange, color, error }) => (
+  <StyledTextField color={color || '#2196f3'} error={error}>
     <input
       placeholder=' '
       value={value}

@@ -4,7 +4,7 @@ import { Spinner, TextField, Radio, Checkbox } from '../src'
 
 storiesOf('Spinners', module)
   .add('Spinner', () => <Spinner />)
-  .add('Textfield', () => <TextField label="Enter a text" />)
+  .add('Textfield', () => <TextField error label="Enter a text" />)
   .add('Checkbox', () => <Checkbox label="Check me" />)
   .add('Radio', () => (
     <div>

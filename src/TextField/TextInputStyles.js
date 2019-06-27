@@ -22,7 +22,8 @@ const StyledTextField = styled.label`
     box-sizing: border-box;
     margin: 0;
     border: solid 1px; /* Safari */
-    border-color: ${borderColor};
+    border-color: ${({ error }) =>
+      error ? 'rgba(204, 0, 0, 1)' : borderColor};
     border-top-color: transparent;
     border-radius: 4px;
     padding: 15px 13px 15px;
@@ -34,7 +35,6 @@ const StyledTextField = styled.label`
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
-    caret-color: ${({ color }) => color};
     transition: border 0.2s, box-shadow 0.2s;
   }
 
@@ -65,7 +65,8 @@ const StyledTextField = styled.label`
     box-sizing: border-box;
     margin-top: 6px;
     border-top: solid 1px;
-    border-top-color: ${borderColor};
+    border-top-color: ${({ error }) =>
+      error ? 'rgba(204, 0, 0, 1)' : borderColor};
     min-width: 10px;
     height: 8px;
     pointer-events: none;
@@ -91,7 +92,7 @@ const StyledTextField = styled.label`
   /* Hover */
   &:hover > input,
   &:hover > textarea {
-    border-color: ${hoverColor};
+    border-color: ${({ error }) => (error ? 'rgba(204, 0, 0, 1)' : hoverColor)};
     border-top-color: transparent;
   }
 
@@ -99,18 +100,21 @@ const StyledTextField = styled.label`
   &:hover > textarea + span::before,
   &:hover > input + span::after,
   &:hover > textarea + span::after {
-    border-top-color: ${hoverColor};
+    border-top-color: ${({ error }) =>
+      error ? 'rgba(204, 0, 0, 1)' : hoverColor};
   }
 
   &:hover > input:not(:focus):placeholder-shown,
   &:hover > textarea:not(:focus):placeholder-shown {
-    border-color: ${onSurfaceColor};
+    border-color: ${({ error }) =>
+      error ? 'rgba(204, 0, 0, 1)' : onSurfaceColor};
   }
 
   /* Placeholder-shown */
   & > input:not(:focus):placeholder-shown,
   & > textarea:not(:focus):placeholder-shown {
-    border-top-color: ${borderColor};
+    border-top-color: ${({ error }) =>
+      error ? 'rgba(204, 0, 0, 1)' : borderColor};
   }
 
   & > input:not(:focus):placeholder-shown + span,
@@ -129,24 +133,29 @@ const StyledTextField = styled.label`
   /* Focus */
   & > input:focus,
   & > textarea:focus {
-    border-color: ${({ color }) => color};
+    border-color: ${({ error, color }) =>
+      error ? 'rgba(204, 0, 0, 1)' : color};
     border-top-color: transparent;
-    box-shadow: inset 1px 0 ${({ color }) => color},
-      inset -1px 0 ${({ color }) => color}, inset 0 -1px ${({ color }) => color};
+    box-shadow: inset 1px 0
+        ${({ error, color }) => (error ? 'rgba(204, 0, 0, 1)' : color)},
+      inset -1px 0 ${({ error, color }) => (error ? 'rgba(204, 0, 0, 1)' : color)},
+      inset 0 -1px ${({ error, color }) => (error ? 'rgba(204, 0, 0, 1)' : color)};
     outline: none;
   }
 
   & > input:focus + span,
   & > textarea:focus + span {
-    color: ${({ color }) => color};
+    color: ${({ error, color }) => (error ? 'rgba(204, 0, 0, 1)' : color)};
   }
 
   & > input:focus + span::before,
   & > input:focus + span::after,
   & > textarea:focus + span::before,
   & > textarea:focus + span::after {
-    border-top-color: ${({ color }) => color} !important;
-    box-shadow: inset 0 1px ${({ color }) => color};
+    border-top-color: ${({ error, color }) =>
+      error ? 'rgba(204, 0, 0, 1)' : color} !important;
+    box-shadow: inset 0 1px
+      ${({ error, color }) => (error ? 'rgba(204, 0, 0, 1)' : color)};
   }
 
   /* Disabled */
