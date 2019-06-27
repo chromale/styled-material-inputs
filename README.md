@@ -13,7 +13,7 @@ Example
 ```
    <TextInput
       label="Email Address"
-      onChange={value => console.log("Value:", value)}
+      onChange={event => console.log("Event:", event)}
       color="#96C09D"
     />
 ```
@@ -31,7 +31,8 @@ Props
 ```
     <CheckBox
       label="Check me!"
-      onChange={value => console.log("Value:", value)}
+      color="#96C09D"
+      onChange={event => console.log("Event:", event)}
     />
 ```
 
@@ -40,20 +41,11 @@ Props
 ```
       <Radio
         color="#96C09D"
-        options={[
-          { label: "Yes", value: "yes" },
-          { label: "No way", value: "no" }
-        ]}
+        name="selectSomething"
+        value="this"
+        label="This"
       />
 ```
-
-Props
-| Name | Type | Description |
-| ------------- |:-------------:| -----:|
-| options | array of options | `{label: "Some label", value: "Some value"}` |
-| onChange | function | callback after click |
-| color | string | main color |
-| name | string | unique identification |
 
 ## Special thanks
 
