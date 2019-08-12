@@ -11,7 +11,7 @@ const motion = props => keyframes`
 `
 
 const RippleSpinner = styled.div`
-  color: official;
+  color: red;
   display: inline-block;
   position: relative;
   width: ${p => `${p.size}${p.sizeUnit}`};
@@ -31,7 +31,7 @@ const RippleSpinner = styled.div`
     width: 5px;
     height: 14px;
     border-radius: 20%;
-    background: ${p => p.color};
+    background: purple;
   }
   div:nth-child(1) {
     transform: rotate(0deg);

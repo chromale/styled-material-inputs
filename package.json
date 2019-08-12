@@ -1,5 +1,5 @@
 {
-  "name": "styled-material-inputs",
+  "name": "purple-components",
   "version": "0.1.3",
   "description": "",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/chromale/styled-material-inputs"
+    "url": "enter_repo_here"
   },
   "scripts": {
     "prebuild": "rimraf dist",
@@ -79,6 +79,7 @@
     }
   },
   "dependencies": {
+    "react-phone-input-2": "^2.9.5",
     "styled-components": "^4.2.0"
   }
 }
