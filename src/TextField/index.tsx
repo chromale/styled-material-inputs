@@ -1,4 +1,5 @@
-import React from 'react'
+import * as React from 'react';
+// @ts-ignore
 import StyledTextField from './TextInputStyles'
 
 const TextField = ({
@@ -10,7 +11,7 @@ const TextField = ({
   error,
   fullWidth,
   type
-}) => (
+}: any) => (
   <StyledTextField
     color={color || '#2196f3'}
     error={error}
@@ -21,7 +22,6 @@ const TextField = ({
       type={type || 'text'}
       value={value}
       name={name}
-      value={value}
       onChange={e => onChange && onChange(e)}
     />
     <span>{label}</span>

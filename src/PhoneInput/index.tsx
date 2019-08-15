@@ -1,5 +1,6 @@
-import React from 'react'
+import * as React from 'react';
 import styled from 'styled-components'
+// @ts-ignore
 import ReactPhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/dist/style.css'
 
@@ -15,7 +16,7 @@ const StyledReactPhoneInput = styled.div`
   }
 `
 
-const PhoneInput = ({ color, size, sizeUnit }) => (
+const PhoneInput = () => (
   <StyledReactPhoneInput>
     <ReactPhoneInput onChange={() => console.log('kek')} />
   </StyledReactPhoneInput>

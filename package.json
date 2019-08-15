@@ -13,9 +13,7 @@
   },
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "babel src -d dist",
-    "lint": "eslint '**/*.js'",
-    "format": "prettier-standard 'src/**/*.js'",
+    "build": "tsc",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:update": "jest --updateSnapshot",
@@ -30,7 +28,6 @@
   },
   "keywords": [
     "react",
-    "material-ui",
     "forms",
     "styled-components"
   ],
@@ -47,20 +44,9 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.5",
     "coveralls": "^3.0.2",
-    "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-jest": "^22.1.2",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-promise": "^4.1.1",
-    "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-standard": "^4.0.0",
     "gh-pages": "^2.0.1",
-    "html-webpack-plugin": "^3.2.0",
-    "husky": "^2.2.0",
     "jest": "^23.6.0",
     "lint-staged": "^8.1.5",
-    "prettier-standard": "^9.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-test-renderer": "^16.7.0",
@@ -79,7 +65,16 @@
     }
   },
   "dependencies": {
+    "@storybook/addon-info": "^5.1.11",
+    "@types/node": "^12.7.2",
+    "@types/react": "^16.9.1",
+    "@types/react-dom": "^16.8.5",
+    "@types/storybook__react": "^4.0.2",
+    "@types/styled-components": "^4.1.18",
+    "awesome-typescript-loader": "^5.2.1",
+    "react-docgen-typescript-loader": "^3.1.1",
     "react-phone-input-2": "^2.9.5",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "typescript": "^3.5.3"
   }
 }

@@ -1,7 +1,12 @@
-import React from 'react'
+import * as React from 'react';
 import styled, { keyframes } from 'styled-components'
 
-const motion = props => keyframes`
+interface YourProps {
+  size: any
+  sizeUnit: any
+}
+
+const motion = () => keyframes`
   0% {
     opacity: 1;
   }
@@ -10,7 +15,7 @@ const motion = props => keyframes`
   }
 `
 
-const RippleSpinner = styled.div`
+const RippleSpinner = styled.div<YourProps & React.HTMLProps<HTMLInputElement>>`
   color: red;
   display: inline-block;
   position: relative;
@@ -19,7 +24,7 @@ const RippleSpinner = styled.div`
 
   div {
     transform-origin: 32px 32px;
-    animation: ${p => motion(p)} 1.2s linear infinite;
+    animation: ${() => motion()} 1.2s linear infinite;
   }
 
   div:after {
@@ -83,7 +88,7 @@ const RippleSpinner = styled.div`
   }
 `
 
-const Ripple = ({ color, size, sizeUnit }) => (
+const Ripple = ({ color, size, sizeUnit }: any) => (
   <RippleSpinner color={color} size={size} sizeUnit={sizeUnit}>
     <div />
     <div />
